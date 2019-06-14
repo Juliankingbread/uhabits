@@ -242,6 +242,8 @@ public class ScoreChart extends ScrollableChart
         columnWidth = Math.max(columnWidth, getMaxDayWidth() * 1.5f);
         columnWidth = Math.max(columnWidth, getMaxMonthWidth() * 1.2f);
 
+        if(columnWidth == 0) { columnWidth = 1; }
+        
         nColumns = (int) (width / columnWidth);
         columnWidth = (float) width / nColumns;
         setScrollerBucketSize((int) columnWidth);
