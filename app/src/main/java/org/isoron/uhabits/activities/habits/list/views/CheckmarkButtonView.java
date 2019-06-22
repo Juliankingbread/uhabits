@@ -118,10 +118,10 @@ public class CheckmarkButtonView extends View
         int height = res.getDimensionPixelSize(R.dimen.checkmarkHeight);
         int width = res.getDimensionPixelSize(R.dimen.checkmarkWidth);
 
-        widthMeasureSpec = makeMeasureSpec(width, EXACTLY);
-        heightMeasureSpec = makeMeasureSpec(height, EXACTLY);
+        int madeWidthMeasureSpec = makeMeasureSpec(width, EXACTLY);
+        int madeHeightMeasureSpec = makeMeasureSpec(height, EXACTLY);
 
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        super.onMeasure(madeWidthMeasureSpec, madeHeightMeasureSpec);
     }
 
     private void init()
