@@ -113,7 +113,7 @@ public class HabitTest extends BaseUnitTest
         
         assertThat(h.isArchived(), is(false));
         assertThat(h.getFrequency(), equalTo(new Frequency(1,2)));
-        assertThat(h.getReminder(), equalTo(new Reminder(8, 30, newWeekdayList(1))));
+        assertThat(h.getReminder(), equalTo(new Reminder(8, 30, new WeekdayList(1))));
         assertThat(h.getColor(), equalTo(1));
         
     }
