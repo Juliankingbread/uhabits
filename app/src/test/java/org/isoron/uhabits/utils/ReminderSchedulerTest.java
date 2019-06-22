@@ -30,6 +30,7 @@ import org.junit.*;
 import java.util.*;
 
 import static org.mockito.Mockito.*;
+import static org.junit.Assert.*;
 
 @SuppressWarnings("JavaDoc")
 public class ReminderSchedulerTest extends BaseUnitTest
