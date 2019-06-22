@@ -62,7 +62,7 @@ public abstract class DayPickerView extends ListView implements OnScrollListener
     protected int mNumWeeks = 6;
     protected boolean mShowWeekNumber = false;
     protected int mDaysPerWeek = 7;
-    private SimpleDateFormat YEAR_FORMAT = new SimpleDateFormat("yyyy", Locale.getDefault());
+    private static SimpleDateFormat YEAR_FORMAT = new SimpleDateFormat("yyyy", Locale.getDefault());
 
     // These affect the scroll speed and feel
     protected float mFriction = 1.0f;
