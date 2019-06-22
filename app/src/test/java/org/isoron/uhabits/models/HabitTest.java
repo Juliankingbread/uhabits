@@ -119,7 +119,7 @@ public class HabitTest extends BaseUnitTest
     }
     
     @Test
-    public voiod test_archiveReminder() {
+    public void test_archiveReminder() {
     
         Habit h = modelFactory.buildHabit();
         assertFalse(h.isArchived());
