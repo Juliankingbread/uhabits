@@ -78,7 +78,7 @@ public class HabitTest extends BaseUnitTest
         h.setReminder(new Reminder(8, 30, WeekdayList.EVERY_DAY));
         
         assertThat(h.isArchived(), is(false));
-        assertThat(h.getFrequency(), equalTo(new Frequency(1,2));
+        assertThat(h.getFrequency(), equalTo(new Frequency(1,2)));
         assertThat(h.hasReminder(), is(true));
         assertThat(h.getReminder(), equalTo(new Reminder(8, 30, WeekdayList.EVERY_DAY)));
         
@@ -97,12 +97,12 @@ public class HabitTest extends BaseUnitTest
         
         // Set properties
         h.setArchived(false);
-        h.setFrequency((new Frequency(10, 20));
+        h.setFrequency(new Frequency(10, 20));
         h.setReminder(new Reminder(7, 10, WeekdayList.EVERY_DAY));
         h.setColor(0);
         
         assertThat(h.isArchived(), is(false));
-        assertThat(h.getFrequency(), equalTo(new Frequency(10,20));
+        assertThat(h.getFrequency(), equalTo(new Frequency(10,20)));
         assertThat(h.getReminder(), equalTo(new Reminder(7, 10, WeekdayList.EVERY_DAY)));
         assertThat(h.getColor(), equalTo(0));
     
@@ -112,7 +112,7 @@ public class HabitTest extends BaseUnitTest
         h.setColor(1);
         
         assertThat(h.isArchived(), is(false));
-        assertThat(h.getFrequency(), equalTo(new Frequency(1,2));
+        assertThat(h.getFrequency(), equalTo(new Frequency(1,2)));
         assertThat(h.getReminder(), equalTo(new Reminder(8, 30, newWeekdayList(1))));
         assertThat(h.getColor(), equalTo(1));
         
