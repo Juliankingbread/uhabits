@@ -127,6 +127,20 @@ public class ReminderSchedulerTest extends BaseUnitTest
         habit.setReminder(new Reminder(8, 30, WeekdayList.EVERY_DAY));
         scheduleAndVerify(null, expectedCheckmarkTime, expectedReminderTime);
     }
+    
+    @Test 
+    public void testScheduleClearReminder() {
+    
+        // Set Reminder and check for both existence as well as time
+        habit.setReminder(new Reminder(8, 30, WeekdayList.EVERY_DAY));
+        scheduleAndVerify(null, expectedCheckmarkTime, expectedReminderTime);
+        assertThat(habit.hasReminder(), is(true));
+        
+        // Try to clear the new reminder, validate nonexistance.
+        habit.clearReminder();
+        assertThat(habit.hasReminder(), is(false));
+    
+    }
 
     @Test
     public void testSchedule_withoutReminder()
