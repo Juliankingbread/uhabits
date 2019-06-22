@@ -186,7 +186,9 @@ public class FrequencyChart extends ScrollableChart
         columnWidth = Math.max(columnWidth, getMaxMonthWidth() * 1.2f);
 
         columnHeight = 8 * baseSize;
-        nColumns = (int) (width / columnWidth);
+        if (nColumns != 0) {
+            nColumns = (int) (width / columnWidth);
+        }
         paddingTop = 0;
     }
 
