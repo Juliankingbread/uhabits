@@ -37,7 +37,7 @@ public abstract class DateUtils
     /**
      * Number of milliseconds in one day.
      */
-    public static long millisecondsInOneDay = 24 * 60 * 60 * 1000;
+    public static long millisecondsInOneDay = 24 * 60 * 60 * (long) 1000;
 
     public static long applyTimezone(long localTimestamp)
     {
