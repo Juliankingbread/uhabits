@@ -28,8 +28,6 @@ import org.isoron.uhabits.models.*;
 import org.junit.*;
 import org.junit.rules.*;
 
-import nl.jqno.equalsverifier.*;
-
 import java.util.*;
 
 import static org.mockito.Mockito.*;
@@ -144,11 +142,11 @@ public class ReminderSchedulerTest extends BaseUnitTest
         // Set Reminder and check for both existence as well as time
         habit.setReminder(new Reminder(8, 30, WeekdayList.EVERY_DAY));
         scheduleAndVerify(null, expectedCheckmarkTime, expectedReminderTime);
-        assertThat(habit.hasReminder(), is(true));
+        assertTrue(habit.hasReminder());
         
         // Try to clear the new reminder, validate nonexistance.
         habit.clearReminder();
-        assertThat(habit.hasReminder(), is(false));
+        assertFalse(habit.hasReminder());
     
     }
 
