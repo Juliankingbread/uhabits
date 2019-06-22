@@ -131,6 +131,12 @@ public class ReminderSchedulerTest extends BaseUnitTest
     @Test 
     public void testScheduleClearReminder() {
     
+        long now = timestamp(2019, 1, 26, 13, 0);
+        DateUtils.setFixedLocalTime(now);
+
+        long expectedCheckmarkTime = timestamp(2019, 1, 27, 0, 0);
+        long expectedReminderTime = timestamp(2019, 1, 27, 12, 30);
+        
         // Set Reminder and check for both existence as well as time
         habit.setReminder(new Reminder(8, 30, WeekdayList.EVERY_DAY));
         scheduleAndVerify(null, expectedCheckmarkTime, expectedReminderTime);
