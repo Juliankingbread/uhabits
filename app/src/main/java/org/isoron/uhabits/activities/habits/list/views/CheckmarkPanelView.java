@@ -127,10 +127,10 @@ public class CheckmarkPanelView extends LinearLayout implements Preferences.List
 
         float width = buttonWidth * nButtons;
 
-        widthSpec = makeMeasureSpec((int) width, EXACTLY);
-        heightSpec = makeMeasureSpec((int) buttonHeight, EXACTLY);
+        int measuredWidthSpec = makeMeasureSpec((int) width, EXACTLY);
+        int measuredHeightSpec = makeMeasureSpec((int) buttonHeight, EXACTLY);
 
-        super.onMeasure(widthSpec, heightSpec);
+        super.onMeasure(measuredWidthSpec, measuredHeightSpec);
     }
 
     private void addCheckmarkButtons()
