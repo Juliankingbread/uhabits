@@ -117,6 +117,17 @@ public class HabitTest extends BaseUnitTest
         assertThat(h.getColor(), equalTo(1));
         
     }
+    
+    @Test
+    public voiod test_archiveReminder() {
+    
+        Habit h = modelFactory.buildHabit();
+        assertFalse(h.isArchived());
+        
+        h.setArchived(true);
+        assertTrue(h.isArchived());
+    
+    }
 
     @Test
     public void test_hasReminder_clearReminder()
