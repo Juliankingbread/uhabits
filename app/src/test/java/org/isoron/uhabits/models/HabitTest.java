@@ -64,6 +64,59 @@ public class HabitTest extends BaseUnitTest
         assertThat(habit.getReminder(), equalTo(model.getReminder()));
     }
 
+    @Test
+    /* Added Test for New Habit (new Attributes) */
+    public void test_multiNewAttributes()
+    {
+
+        // Make new Habit
+        Habit h = modelFactory.buildHabit();
+        
+        // Set properties
+        h.setArchived(false);
+        h.setFrequency((new Frequency(1, 2));
+        h.setReminder(new Reminder(8, 30, WeekdayList.EVERY_DAY));
+        
+        assertThat(h.isArchived(), is(false));
+        assertThat(h.getFrequency(), equalTo(new Frequency(1,2));
+        assertThat(h.hasReminder(), is(true));
+        assertThat(h.getReminder(), equalTo(new Reminder(8, 30, WeekdayList.EVERY_DAY)));
+        
+        // Archive (edit)
+        h.setArchived(true);
+        assertThat(h.isArchived(), is(true));
+        
+    }
+    
+    @Test 
+    public void test_multiEditAttributes()
+    {
+    
+        // Make new Habit
+        Habit h = modelFactory.buildHabit();
+        
+        // Set properties
+        h.setArchived(false);
+        h.setFrequency((new Frequency(10, 20));
+        h.setReminder(new Reminder(7, 10, WeekdayList.EVERY_DAY));
+        h.setColor(0);
+        
+        assertThat(h.isArchived(), is(false));
+        assertThat(h.getFrequency(), equalTo(new Frequency(10,20));
+        assertThat(h.getReminder(), equalTo(new Reminder(7, 10, WeekdayList.EVERY_DAY)));
+        assertThat(h.getColor(), equalTo(0));
+    
+        // EDITTEN
+        h.setFrequency((new Frequency(1, 2));
+        h.setReminder(new Reminder(8, 30, new WeekdayList(1)));
+        h.setColor(1);
+        
+        assertThat(h.isArchived(), is(false));
+        assertThat(h.getFrequency(), equalTo(new Frequency(1,2));
+        assertThat(h.getReminder(), equalTo(new Reminder(8, 30, newWeekdayList(1))));
+        assertThat(h.getColor(), equalTo(1));
+        
+    }
 
     @Test
     public void test_hasReminder_clearReminder()
