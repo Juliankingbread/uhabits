@@ -26,6 +26,9 @@ import org.isoron.uhabits.commands.*;
 import org.isoron.uhabits.intents.*;
 import org.isoron.uhabits.models.*;
 import org.junit.*;
+import org.junit.rules.*;
+
+import nl.jqno.equalsverifier.*;
 
 import java.util.*;
 
