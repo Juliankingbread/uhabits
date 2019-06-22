@@ -68,6 +68,34 @@ public class ImportTest extends BaseAndroidTest
         assertFalse(containsRepetition(habit, 2016, 3, 20));
     }
 
+
+    @Test
+    public void testHabitBullImportEdit() throws IOException
+    {
+        importFromFile("habitbull.csv");
+
+        // Check last item (if it is in accordance to CSV)
+        assertThat(habitList.size(), equalTo(4));
+
+        Habit habit = habitList.getByPosition(3);
+        assertThat(habit.getName(), equalTo("Grow spiritually"));
+        assertThat(habit.getDescription(), equalTo("transcend ego, practice compassion, smile and breath"));
+        assertTrue(containsRepetition(habit, 2016, 3, 15));
+        assertFalse(containsRepetition(habit, 2016, 3, 16));
+        assertTrue(containsRepetition(habit, 2016, 3, 17));
+        assertFalse(containsRepetition(habit, 2016, 3, 20));
+        
+        // Try changing/setting two attribtues
+        habit.setColor(0);
+        habit.setArchived(true);
+        
+        // Assert that edit after import is no problem
+        assertTrue(habit.isArchived());
+        assertThat(habit.getColor(), is(0));
+        
+    }
+
+
     @Test
     public void testLoopDB() throws IOException
     {
