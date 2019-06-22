@@ -40,7 +40,7 @@ public class MemoryScoreList extends ScoreList
     {
         list.addAll(scores);
         Collections.sort(list,
-            (s1, s2) -> Long.signum(s2.getTimestamp() - s1.getTimestamp()));
+            (s1, s2) -> Long.signum(s2.getTimestamp() - (long) s1.getTimestamp()));
     }
 
     @NonNull
