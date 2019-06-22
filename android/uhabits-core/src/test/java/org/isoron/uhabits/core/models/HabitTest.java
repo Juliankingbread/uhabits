@@ -60,7 +60,7 @@ public class HabitTest extends BaseUnitTest
         model.setArchived(true);
         model.setColor(0);
         model.setFrequency(new Frequency(10, 20));
-        model.setReminder(new Reminder(8, 30, new WeekdayList(1)));
+        model.setReminder(new Reminder(8, 30, WeekdayList.EVERY_DAY));
 
         Habit habit = modelFactory.buildHabit();
         habit.copyFrom(model);
