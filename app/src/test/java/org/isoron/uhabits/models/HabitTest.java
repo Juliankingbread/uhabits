@@ -63,6 +63,45 @@ public class HabitTest extends BaseUnitTest
         assertThat(habit.getFrequency(), equalTo(model.getFrequency()));
         assertThat(habit.getReminder(), equalTo(model.getReminder()));
     }
+    
+    @Test
+    public void test_copyAfterEdit()
+    {
+        // Model of habit
+        Habit model = modelFactory.buildHabit();
+        model.setArchived(true);
+        model.setColor(0);
+        model.setFrequency(new Frequency(10, 20));
+        model.setReminder(new Reminder(8, 30, new WeekdayList(1)));
+        
+        // Make habit
+        Habit habit = modelFactory.buildHabit();
+        // Copy from model
+        habit.copyFrom(model);
+        // Test if data of habit matches data set in model
+        assertThat(habit.isArchived(), is(model.isArchived()));
+        assertThat(habit.getColor(), is(model.getColor()));
+        assertThat(habit.getFrequency(), equalTo(model.getFrequency()));
+        assertThat(habit.getReminder(), equalTo(model.getReminder()));
+        
+        // Change data in model
+        model.setArchived(false);
+        model.setColor(0);
+        model.setFrequency(new Frequency(5, 10));
+        model.setReminder(new Reminder(2, 15, new WeekdayList(2)));
+        
+        // Make another habit
+        Habit habit_copy = modelFactory.buildHabit();
+        // Copy
+        habit_copy.copyFrom(model);
+        // Test if data in habit matches new, changed data
+        assertThat(habit_copy.isArchived(), is(model.isArchived()));
+        assertThat(habit.getColor(), is(model.getColor()));
+        assertThat(habit.getFrequency(), equalTo(model.getFrequency()));
+        assertThat(habit.getReminder(), equalTo(model.getReminder()));
+        
+     }
+        
 
     @Test
     /* Added Test for New Habit (new Attributes) */
