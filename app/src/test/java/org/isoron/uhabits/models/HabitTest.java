@@ -98,7 +98,6 @@ public class HabitTest extends BaseUnitTest
         // Test if data in habit matches new, changed data
         assertThat(habit_copy.isArchived(), is(model.isArchived()));
         assertThat(habit.getColor(), is(model.getColor()));
-        assertThat(habit.getFrequency(), equalTo(model.getFrequency()));
         assertThat(habit.getReminder(), equalTo(model.getReminder()));
         
      }
