@@ -65,6 +65,7 @@ public class HabitTest extends BaseUnitTest
     }
     
     @Test
+    /* Added Test for copying a habit, editing it, then copying again */
     public void test_copyAfterEdit()
     {
         // Model of habit
