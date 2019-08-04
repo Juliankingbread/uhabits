@@ -128,7 +128,7 @@ public class HabitTest extends BaseUnitTest
     }
     
     @Test 
-    public void test_multiEditAttributes()
+    public void test_multiEdit()
     {
     
         // Make new Habit
