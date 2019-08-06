@@ -70,13 +70,16 @@ public class ImportTest extends BaseAndroidTest
 
 
     @Test
+    /* Test to see if importing works correctly. */
     public void testHabitBullImportEdit() throws IOException
     {
+        // Importing data from CSV file
         importFromFile("habitbull.csv");
 
         // Check last item (if it is in accordance to CSV)
         assertThat(habitList.size(), equalTo(4));
 
+        // Test if data in a certain position matches expected data
         Habit habit = habitList.getByPosition(3);
         assertThat(habit.getName(), equalTo("Grow spiritually"));
         assertThat(habit.getDescription(), equalTo("transcend ego, practice compassion, smile and breath"));
@@ -85,7 +88,7 @@ public class ImportTest extends BaseAndroidTest
         assertTrue(containsRepetition(habit, 2016, 3, 17));
         assertFalse(containsRepetition(habit, 2016, 3, 20));
         
-        // Try changing/setting two attribtues
+        // Try changing/setting two attributes
         habit.setColor(0);
         habit.setArchived(true);
         
