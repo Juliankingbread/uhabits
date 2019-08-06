@@ -48,7 +48,7 @@ public class HabitTest extends BaseUnitTest
     }
 
     @Test
-    public void test_copyAttributes()
+    public void test_multipleCopies()
     {
         Habit model = modelFactory.buildHabit();
         model.setArchived(true);
@@ -62,6 +62,21 @@ public class HabitTest extends BaseUnitTest
         assertThat(habit.getColor(), is(model.getColor()));
         assertThat(habit.getFrequency(), equalTo(model.getFrequency()));
         assertThat(habit.getReminder(), equalTo(model.getReminder()));
+        
+        Habit habit_two = modelFactory.buildHabit();
+        habit_two.copyFrom(model);
+        assertThat(habit_two.isArchived(), is(model.isArchived()));
+        assertThat(habit_two.getColor(), is(model.getColor()));
+        assertThat(habit_two.getFrequency(), equalTo(model.getFrequency()));
+        assertThat(habit_two.getReminder(), equalTo(model.getReminder()));
+        
+        Habit habit_three = modelFactory.buildHabit();
+        habit_three.copyFrom(model);
+        assertThat(habit_three.isArchived(), is(model.isArchived()));
+        assertThat(habit_three.getColor(), is(model.getColor()));
+        assertThat(habit_three.getFrequency(), equalTo(model.getFrequency()));
+        assertThat(habit_three.getReminder(), equalTo(model.getReminder()));
+        
     }
     
     @Test
