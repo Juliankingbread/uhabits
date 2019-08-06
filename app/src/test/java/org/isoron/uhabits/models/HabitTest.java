@@ -228,6 +228,7 @@ public class HabitTest extends BaseUnitTest
         h.setFrequency(new Frequency(6, 2));
         h.setColor(1);
         h.setArchived(true);
+        h.clearReminder();
         
         assertThat(h.isArchived(), is(true));
         assertThat(h.getFrequency(), equalTo(new Frequency(6,2)));
