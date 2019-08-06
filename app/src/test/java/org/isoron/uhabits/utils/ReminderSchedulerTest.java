@@ -136,6 +136,7 @@ public class ReminderSchedulerTest extends BaseUnitTest
         long now = timestamp(2019, 1, 26, 13, 0);
         DateUtils.setFixedLocalTime(now);
 
+        // Set time for Checkmark and Reminder
         long expectedCheckmarkTime = timestamp(2019, 1, 27, 0, 0);
         long expectedReminderTime = timestamp(2019, 1, 27, 12, 30);
         
@@ -144,8 +145,9 @@ public class ReminderSchedulerTest extends BaseUnitTest
         scheduleAndVerify(null, expectedCheckmarkTime, expectedReminderTime);
         assertTrue(habit.hasReminder());
         
-        // Try to clear the new reminder, validate nonexistance.
+        // Try to clear the new reminder
         habit.clearReminder();
+        // Validate nonexistence
         assertFalse(habit.hasReminder());
     
     }
